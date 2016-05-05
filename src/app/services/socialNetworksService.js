@@ -13,19 +13,14 @@ module.exports = angular.module('myApp.services.socialNetworksService', [
 			var deferred = $q.defer();
 			var networks = [
 				{
-					id: 'github',
-					name: 'GitHub',
-					url: 'https://github.com/SirKettle'
-				},
-				{
-					id: 'linkedin',
-					name: 'LinkedIn',
-					url: 'https://www.linkedin.com/in/thirkettle'
+					id: 'facebook',
+					name: 'Facebook',
+					url: 'https://facebook.com/'
 				},
 				{
 					id: 'twitter',
 					name: 'Twitter',
-					url: 'https://twitter.com/thirkettle'
+					url: 'https://twitter.com/loisthirkettle'
 				}
 			];
 			

@@ -3,10 +3,13 @@
 var angular = require('angular');
 
 module.exports = angular.module('myApp.services.twitterService', [
-]).service('TwitterService', function (
+])
+.constant('GET_TWEETS_URL', 'http://server.willthirkettle.co.uk/api/tweets.php')
+.service('TwitterService', function (
 	$q,
 	$http,
-	$filter
+	$filter,
+	GET_TWEETS_URL
 ) {
 	var mCache = {};
 	var mActiveRequests = [];
@@ -90,7 +93,7 @@ module.exports = angular.module('myApp.services.twitterService', [
 		}
 		else {
 			if (mActiveRequests.length === 1) {
-				$http.get('http://server.willthirkettle.co.uk/api/tweets.php')
+				$http.get(GET_TWEETS_URL)
 					.success(function(aData, status, headers, config) {
 						var posts = [];
 

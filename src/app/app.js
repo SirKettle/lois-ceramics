@@ -9,52 +9,46 @@ var localisationService = require('./services/localisationService');
 var analyticsService = require('./services/analyticsService');
 
 var viewAbout = require('./views/about/about');
-var viewProjects = require('./views/projects/projects');
-var viewProject = require('./views/project/project');
-var viewPlay = require('./views/play/play');
-var viewTax = require('./views/tax/tax');
+var viewEvents = require('./views/events/events');
+var viewEvent = require('./views/event/event');
+// var viewOrders = require('./views/orders/orders');
 
 angular.module('myApp', [
 	filters.name,
 	localisationService.name,
 	analyticsService.name,
 	viewAbout.name,
-	viewProjects.name,
-	viewProject.name,
-	viewPlay.name,
-	viewTax.name,
+	viewEvents.name,
+	viewEvent.name,
+	// viewOrders.name,
 	'ui.router'
 ])
 .constant('STATE_URL_HOME_REDIRECT', '/')
 .constant('STATE_URL_ABOUT', '/about')
-.constant('STATE_URL_PROJECTS', '/projects')
-.constant('STATE_URL_PROJECT', '/project/:projectKey')
-.constant('STATE_URL_PLAY', '/play')
-.constant('STATE_URL_TAX', '/tax')
+.constant('STATE_URL_EVENTS', '/events')
+.constant('STATE_URL_EVENT', '/event/:eventKey')
+.constant('STATE_URL_ORDERS', '/orders')
 .constant('STATE_NAME_HOME_REDIRECT', 'home')
 .constant('STATE_NAME_ABOUT', 'about')
-.constant('STATE_NAME_PROJECTS', 'projects')
-.constant('STATE_NAME_PROJECT', 'project')
-.constant('STATE_NAME_PLAY', 'play')
-.constant('STATE_NAME_TAX', 'tax')
-.constant('DEFAULT_PROJECT_KEY', null)
+.constant('STATE_NAME_EVENTS', 'events')
+.constant('STATE_NAME_EVENT', 'event')
+.constant('STATE_NAME_ORDERS', 'orders')
+.constant('DEFAULT_EVENT_KEY', null)
 .config(function (
 	$stateProvider,
 	$urlRouterProvider,
 	$provide,
 	STATE_URL_HOME_REDIRECT,
 	STATE_URL_ABOUT,
-	STATE_URL_PROJECTS,
-	STATE_URL_PROJECT,
-	STATE_URL_PLAY,
-	STATE_URL_TAX,
+	STATE_URL_EVENTS,
+	STATE_URL_EVENT,
+	STATE_URL_ORDERS,
 	STATE_NAME_HOME_REDIRECT,
 	STATE_NAME_ABOUT,
-	STATE_NAME_PROJECTS,
-	STATE_NAME_PROJECT,
-	STATE_NAME_PLAY,
-	STATE_NAME_TAX,
-	DEFAULT_PROJECT_KEY
+	STATE_NAME_EVENTS,
+	STATE_NAME_EVENT,
+	STATE_NAME_ORDERS,
+	DEFAULT_EVENT_KEY
 ) {
 	// If 404 - go home...
 	$urlRouterProvider.otherwise(STATE_URL_HOME_REDIRECT);
@@ -71,25 +65,21 @@ angular.module('myApp', [
 			url: STATE_URL_ABOUT,
 			template: '<my:view-about></my:view-about>'
 		})
-		.state(STATE_NAME_PROJECTS, {
-			url: STATE_URL_PROJECTS,
-			template: '<my:view-projects></my:view-projects>'
+		.state(STATE_NAME_EVENTS, {
+			url: STATE_URL_EVENTS,
+			template: '<my:view-events></my:view-events>'
 		})
-		.state(STATE_NAME_PROJECT, {
-			url: STATE_URL_PROJECT,
-			template: '<my:view-project></my:view-project>',
+		.state(STATE_NAME_EVENT, {
+			url: STATE_URL_EVENT,
+			template: '<my:view-event></my:view-event>',
 			params: {
-				projectKey: DEFAULT_PROJECT_KEY
+				eventKey: DEFAULT_EVENT_KEY
 			}
-		})
-		.state(STATE_NAME_PLAY, {
-			url: STATE_URL_PLAY,
-			template: '<my:view-play></my:view-play>'
-		})
-		.state(STATE_NAME_TAX, {
-			url: STATE_URL_TAX,
-			template: '<my:view-tax></my:view-tax>'
-		});
+		})/*
+		.state(STATE_NAME_ORDERS, {
+			url: STATE_URL_ORDERS,
+			template: '<my:view-orders></my:view-orders>'
+		})*/;
 
 	// decorate the $q service with 'allSettled' which unlike 'all' resolves if a promise fails
 	$provide.decorator('$q', function($delegate) {

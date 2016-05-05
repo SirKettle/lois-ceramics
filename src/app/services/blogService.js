@@ -3,11 +3,9 @@
 var angular = require('angular');
 
 var twitterService = require('./twitterService.js');
-var tumblrService = require('./tumblrService.js');
 
 module.exports = angular.module('myApp.services.blogService', [
-	twitterService.name,
-	tumblrService.name
+	twitterService.name
 ]).service('BlogService', function (
 	$q,
 	$http,
@@ -25,12 +23,8 @@ module.exports = angular.module('myApp.services.blogService', [
 				posts = posts.concat(tweets);
 			});
 
-			var tumblrPromise = TumblrService.getPosts().then(function (tumblrPosts) {
-				posts = posts.concat(tumblrPosts);
-			});
-
 			// the blog posts are a mixture of tumblr posts and tweets
-			$q.allSettled([tweetsPromise, tumblrPromise]).finally(function () {
+			$q.allSettled([ tweetsPromise ]).finally(function () {
 				// initially sort the posts chronologically- most recent first 
 				posts = posts.sort(function (a, b) {
 					return b.__props.timeStamp - a.__props.timeStamp;

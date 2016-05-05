@@ -6,8 +6,9 @@ module.exports = angular.module('myApp.services.navigationService', [
 ])
 .service('NavigationService', function (
 	STATE_NAME_ABOUT,
-	STATE_NAME_PROJECTS,
-	STATE_NAME_PLAY
+	STATE_NAME_EVENTS,
+	STATE_NAME_ORDERS/*,
+	STATE_NAME_CONTACT*/
 ) {
 	return {
 		getMainNavItems: function () {
@@ -17,17 +18,17 @@ module.exports = angular.module('myApp.services.navigationService', [
 					state: STATE_NAME_ABOUT
 				},
 				{
-					title: 'Projects',
-					state: STATE_NAME_PROJECTS
+					title: 'Events',
+					state: STATE_NAME_EVENTS
 				},
 				{
-					title: 'Play',
-					state: STATE_NAME_PLAY
-				},
+					title: 'Orders',
+					state: STATE_NAME_ORDERS
+				}/*,
 				{
-					title: 'Resume',
-					url: 'http://bit.ly/1cGjA8X'
-				}
+					title: 'Contact',
+					state: STATE_NAME_CONTACT
+				}*/
 			];
 		}
 	};
