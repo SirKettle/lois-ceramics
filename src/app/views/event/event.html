@@ -1,0 +1,29 @@
+<div class="view-event page-view">
+	
+	<my:header></my:header>
+	
+	<article ng:if="!!Event.error">
+		<h2>{{ Event.error }}</h2>
+		<p><a href="/">Take me home</a>.</p>
+	</article>
+	
+	<article ng:if="!Event.details && !Event.error">
+		<h2>Loading...</h2>
+	</article>
+
+	<article ng:if="!!Event.details && !Event.message">
+		
+		<h2>
+			<a title="Go to: {{ Event.details.website }}" href="{{ Event.details.website }}">{{ Event.details.title }}</a>
+		</h2>
+		<!-- 
+		<my:avatar data-model="Event.details" data-is-thumb="true"></my:avatar> -->
+
+		<h3>{{ Event.details.summary }}</h3>
+		<p>{{ Event.details.description }}</p>
+		
+	</article>
+
+	<my:footer></my:footer>
+
+</div>
