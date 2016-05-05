@@ -1,10 +1,100 @@
 [
 	{
 		"id"      : "suttonhoo",
-		"website" : "http://suttonhoo.com",
 		"title"   : "Sutton Hoo",
-		"date"    : "20160509",
-		"summary" : "Making some pots to sell",
-		"description" : "They're really nice..."
+		"date"    : "20160409",
+		"summary" : "April 9 & 10",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "glemhamhall",
+		"title"   : "Glemham Hall",
+		"date"    : "20160430",
+		"summary" : "April 30 - May 2",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "lavenham",
+		"title"   : "Lavenham Little Hall Museum",
+		"date"    : "20160527",
+		"summary" : "May 27 – 31",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "norfolknorwichopenstudios",
+		"title"   : "Norfolk & Norwich Open Studios",
+		"date"    : "20160528",
+		"summary" : "May 28 – June 12",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "wow",
+		"title"   : "WoW festival",
+		"date"    : "20160701",
+		"summary" : "July 1 – 3",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "southwoldstreetfair",
+		"title"   : "Southwold Street Fair",
+		"date"    : "20160625",
+		"summary" : "June 25",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "walberswickvillagehall",
+		"title"   : "Walberswick village hall",
+		"date"    : "20160729",
+		"summary" : "July 29 – Aug 1",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "folkeast",
+		"title"   : "Folk East",
+		"date"    : "20160819",
+		"summary" : "Aug 19 – 21",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "artonthepromfelixstowe",
+		"title"   : "Art on the Prom, Felixstowe",
+		"date"    : "20160904",
+		"summary" : "Sep 4",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "ickworthwoodfair",
+		"title"   : "Ickworth Wood Fair",
+		"date"    : "20161008",
+		"summary" : "Oct 8 – 9 TBC",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "blackthorpebarns",
+		"title"   : "British Crafts at Blackthorpe Barns",
+		"date"    : "20161112",
+		"summary" : "Nov 12 – 13",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "elycathedralxmasfair",
+		"title"   : "Ely Cathedral Xmas Fair",
+		"date"    : "20161117",
+		"summary" : "Nov 17 – 20",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "woodbridgestreetxmasfair",
+		"title"   : "Woodbridge Street Xmas Fair",
+		"date"    : "201612",
+		"summary" : "Dec TBC",
+		"description" : "Hmmmm"
+	},
+	{
+		"id"      : "dissyardsxmasfair",
+		"title"   : "Diss Yards Xmas Fair",
+		"date"    : "201612",
+		"summary" : "Dec TBC",
+		"description" : "Hmmmm"
 	}
 ]
