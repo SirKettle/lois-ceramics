@@ -11,8 +11,7 @@ module.exports = angular.module('myApp.services.blogService', [
 	$http,
 	$filter,
 
-	TwitterService,
-	TumblrService
+	TwitterService
 ) {
 
 	return {

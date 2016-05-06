@@ -4,31 +4,28 @@ $gutterSize: 15px;
 $gutterSizeMid: 30px;
 $gutterSizeWide: 50px;
 
+$breakPointPortraitTablet: 750px;
 $breakPoint: 800px;
-$breakPointWide: 1200px;
+$breakPointWide: 1199px;
 $breakPointSocialLinks: 650px;
 
 
 // font family and weights - need to match the included google fonts in the link in index.html
 $mainFont: 'Open Sans', 'Helvetica Neue', sans-serif;
-$mainFontWeight: 300;
-$mainFontWeightMid: 400;
-$smallFontWeight: 400;
-$mainFontWeightStrong: 600;
+$mainFontWeight: 400;
+$mainFontWeightStrong: 700;
 
-$condensedFont: 'Open Sans Condensed', 'Helvetica Neue', sans-serif;
-$condensedFontWeight: 300;
-$condensedFontWeightStrong: 700;
+$headerFont: 'Swanky and Moo Moo', georgia, serif;
+$headerWeight: 400;
 
-$headerFont: 'Oswald', sans-serif;
-$headerWeight: 700;
+$headerNavFont: $mainFont;
+$headerNavWeight: $mainFontWeight;
 
-$headingFont: $condensedFont;
-$headingWeight: $condensedFontWeightStrong;
+$headingFont: $mainFont;
+$headingWeight: $mainFontWeightStrong;
 
-$subHeadingFont: 'Merriweather';
-$subHeadingWeight: 400;
-
+$subHeadingFont: $mainFont;
+$subHeadingWeight: $mainFontWeightStrong;
 
 // colour scheme
 $mainColor: #666360;
@@ -43,8 +40,13 @@ $headerNavItemColor: #7f726f;
 
 
 // font sizes
-$headerFontSize: 40px;
-$headerNavFontSize: 25px;
+$baseFontSize: 16px;
+$headerFontSize: 2.75rem;
+$headerNavFontSize: 1.25rem;
+$headerFontSizeMid: 4.5rem;
+$headerNavFontSizeMid: 1.5rem;
+$headerFontSizeWide: 6rem;
+$headerNavFontSizeWide: 1.5rem;
 
 
 

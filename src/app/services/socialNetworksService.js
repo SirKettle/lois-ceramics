@@ -15,12 +15,12 @@ module.exports = angular.module('myApp.services.socialNetworksService', [
 				{
 					id: 'facebook',
 					name: 'Facebook',
-					url: 'https://facebook.com/'
+					url: 'https://www.facebook.com/lois.thirkettle'
 				},
 				{
 					id: 'twitter',
 					name: 'Twitter',
-					url: 'https://twitter.com/loisthirkettle'
+					url: 'https://twitter.com/lois_thirkettle'
 				}
 			];
 			

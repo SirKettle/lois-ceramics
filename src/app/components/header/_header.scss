@@ -15,18 +15,16 @@
 
 		h1 {
 			margin-top: 10px;
-			font-size: $headerFontSize + 2;
-			font-family: $condensedFont;
-			font-weight: $condensedFontWeight;
+			font-family: $headerFont;
+			font-weight: $headerWeight;
+			font-size: $headerFontSize;
+			line-height: 0.7;
 			
 			a {
-				color: rgba($headerColor, 0.5);
+				color: rgba($headerColor, 0.25);
 				display: block;
 
 				strong {
-					font-size: $headerFontSize + 10;
-					font-family: $headerFont;
-					font-weight: $headerWeight;
 					color: $headerColor;
 					display: block;
 					margin-bottom: 5px;
@@ -56,7 +54,7 @@
 				li {
 					display: inline-block;
 					padding: 5px;
-					border-radius: 50px;
+					border-radius: 10px;
 					background: rgba(black, 0.1);
 					transition: all 0.25s ease;
 					margin-right: 10px;
@@ -92,8 +90,8 @@
 					}
 
 
-					&.-github a {
-						background-image: url('/images/github_large.png');
+					&.-facebook a {
+						background-image: url('/images/facebook_large.png');
 					}
 
 					&.-linkedin a {
@@ -108,8 +106,12 @@
 
 		}
 
-		@media only screen and (min-width: $breakPoint) {
+		@media only screen and (min-width: $breakPointPortraitTablet) {
 			padding: $gutterSizeMid;
+
+			h1 {
+				font-size: $headerFontSizeMid;
+			}
 			
 			hr {
 				margin-top: 15px;
@@ -122,6 +124,10 @@
 			max-width: 1280px;
 			margin: 0 auto;
 			padding: $gutterSizeMid $gutterSizeWide;
+
+			h1 {
+				font-size: $headerFontSizeWide;
+			}
 			
 			hr {
 				margin-top: 20px;

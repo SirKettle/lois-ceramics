@@ -1,8 +1,8 @@
 
 .my-navigation {
 	font-size: $headerNavFontSize;
-	font-family: $condensedFont;
-	font-weight: $condensedFontWeight;
+	font-family: $headerNavFont;
+	font-weight: $headerNavWeight;
 
 	ul {
 		margin-top: -$gutterSize;
@@ -30,7 +30,11 @@
 				}
 			}
 
-			margin-right: $gutterSize*2;
+			margin-right: $gutterSize * 2;
 		}
+	}
+
+	@media only screen and (min-width: $breakPoint) {
+		font-size: $headerNavFontSizeMid;
 	}
 }
