@@ -2,10 +2,10 @@
 
 var angular = require('angular');
 var template = require('./socialNetworks.html');
-var socialNetworksService = require('../../services/socialNetworksService');
+var contactService = require('../../services/contactService');
 
 module.exports = angular.module('myApp.components.socialNetworks', [
-	socialNetworksService.name
+	contactService.name
 ])
 .directive('mySocialNetworks', function (
 	$sce
@@ -23,14 +23,14 @@ module.exports = angular.module('myApp.components.socialNetworks', [
 	};
 })
 .controller('MySocialNetworksCtrl', function (
-	SocialNetworksService
+	ContactService
 ) {
 	var SocialNetworks = this;
 
 	SocialNetworks.socialNetworks = null;
 
 	SocialNetworks.getSocialNetworks = function () {
-		return SocialNetworksService.getSocialNetworks();
+		return ContactService.getSocialNetworks();
 	};
 
 	SocialNetworks.getSocialNetworks().then(function (socialNetworks) {
