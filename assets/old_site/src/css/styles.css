@@ -1,0 +1,105 @@
+
+body {
+	background-image: url("../img/mamma_mia.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	line-height: 1.4;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes reveal {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* Standard syntax */
+@keyframes reveal {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.lois {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+
+	background-image: url("../img/mamma_lois.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	opacity: 0;
+
+    /* Chrome, Safari, Opera */
+    -webkit-animation-name: reveal;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-play-state: running;
+    /* Standard syntax */
+    animation-name: reveal;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+}
+
+.text {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	background: rgba(0,0,0,0.5);
+
+	opacity: 0;
+
+    /* Chrome, Safari, Opera */
+    -webkit-animation-name: reveal;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 12s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-play-state: running;
+    /* Standard syntax */
+    animation-name: reveal;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 12s;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+}
+
+.wrapper {
+	position: relative;
+	margin: 40px auto 0;
+	width: 80%;
+	color: white;
+	text-shadow: black 2px 1px 10px;
+	font-weight: bold;
+	font-family: helvetica neue, helvetica, arial;
+}
+
+header h1 {
+	font-size: 70px;
+}
+
+.main-content {
+	font-size: 35px;
+	text-align: justify;
+}
+
+h1, h3, p {
+	margin-bottom: 25px;
+}
