@@ -4,7 +4,7 @@ var angular = require('angular');
 
 module.exports = angular.module('myApp.services.twitterService', [
 ])
-.constant('GET_TWEETS_URL', 'http://server.willthirkettle.co.uk/api/tweets.php')
+.constant('GET_TWEETS_URL', 'http://server.willthirkettle.co.uk/api/getTweets.php')
 .service('TwitterService', function (
 	$q,
 	$http,
@@ -93,7 +93,14 @@ module.exports = angular.module('myApp.services.twitterService', [
 		}
 		else {
 			if (mActiveRequests.length === 1) {
-				$http.get(GET_TWEETS_URL)
+				$http({
+						url: GET_TWEETS_URL, 
+						method: 'GET',
+						params: {
+							user: 'lois_thirkettle',
+							count: 8
+						}
+					})
 					.success(function(aData, status, headers, config) {
 						var posts = [];
 

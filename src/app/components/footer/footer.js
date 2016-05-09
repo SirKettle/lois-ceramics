@@ -2,10 +2,13 @@
 
 var angular = require('angular');
 var template = require('./footer.html');
+// services
+var contactService = require('../../services/contactService');
 // sub components
 var socialNetworksComponent = require('../../components/socialNetworks/socialNetworks');
 
 module.exports = angular.module('myApp.components.footer', [
+	contactService.name,
 	socialNetworksComponent.name
 ])
 .directive('myFooter', function (
@@ -14,7 +17,7 @@ module.exports = angular.module('myApp.components.footer', [
 	return {
 		restrict: 'E',
 		template: template,
-		controller: 'MyFooterCtrl',
+		controller: 'MyFooterCtrl as Footer',
 		replace: true,
 		scope: {
 		},
@@ -23,7 +26,12 @@ module.exports = angular.module('myApp.components.footer', [
 	};
 })
 .controller('MyFooterCtrl', function (
-	$scope
+	ContactService
 ) {
+	var Footer = this;
 
+	ContactService.getContactDetails()
+		.then(function (details) {
+			Footer.details = details;
+		});
 });

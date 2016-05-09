@@ -11,7 +11,8 @@ var analyticsService = require('./services/analyticsService');
 var viewAbout = require('./views/about/about');
 var viewEvents = require('./views/events/events');
 var viewEvent = require('./views/event/event');
-// var viewOrders = require('./views/orders/orders');
+var viewOrders = require('./views/orders/orders');
+var viewContact = require('./views/contact/contact');
 
 angular.module('myApp', [
 	filters.name,
@@ -20,7 +21,8 @@ angular.module('myApp', [
 	viewAbout.name,
 	viewEvents.name,
 	viewEvent.name,
-	// viewOrders.name,
+	viewOrders.name,
+	viewContact.name,
 	'ui.router'
 ])
 .constant('STATE_URL_HOME_REDIRECT', '/')
@@ -28,11 +30,13 @@ angular.module('myApp', [
 .constant('STATE_URL_EVENTS', '/events')
 .constant('STATE_URL_EVENT', '/event/:eventKey')
 .constant('STATE_URL_ORDERS', '/orders')
+.constant('STATE_URL_CONTACT', '/contact')
 .constant('STATE_NAME_HOME_REDIRECT', 'home')
 .constant('STATE_NAME_ABOUT', 'about')
 .constant('STATE_NAME_EVENTS', 'events')
 .constant('STATE_NAME_EVENT', 'event')
 .constant('STATE_NAME_ORDERS', 'orders')
+.constant('STATE_NAME_CONTACT', 'contact')
 .constant('DEFAULT_EVENT_KEY', null)
 .config(function (
 	$stateProvider,
@@ -43,11 +47,13 @@ angular.module('myApp', [
 	STATE_URL_EVENTS,
 	STATE_URL_EVENT,
 	STATE_URL_ORDERS,
+	STATE_URL_CONTACT,
 	STATE_NAME_HOME_REDIRECT,
 	STATE_NAME_ABOUT,
 	STATE_NAME_EVENTS,
 	STATE_NAME_EVENT,
 	STATE_NAME_ORDERS,
+	STATE_NAME_CONTACT,
 	DEFAULT_EVENT_KEY
 ) {
 	// If 404 - go home...
@@ -75,11 +81,15 @@ angular.module('myApp', [
 			params: {
 				eventKey: DEFAULT_EVENT_KEY
 			}
-		})/*
+		})
 		.state(STATE_NAME_ORDERS, {
 			url: STATE_URL_ORDERS,
 			template: '<my:view-orders></my:view-orders>'
-		})*/;
+		})
+		.state(STATE_NAME_CONTACT, {
+			url: STATE_URL_CONTACT,
+			template: '<my:view-contact></my:view-contact>'
+		});
 
 	// decorate the $q service with 'allSettled' which unlike 'all' resolves if a promise fails
 	$provide.decorator('$q', function($delegate) {
