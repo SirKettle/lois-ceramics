@@ -13,17 +13,19 @@
 
 	<article ng:if="!!Event.details && !Event.message">
 		
-		<h2>
-			<a title="Go to: {{ Event.details.website }}" href="{{ Event.details.website }}">{{ Event.details.title }}</a>
-		</h2>
+		<h2>{{ Event.details.title }}</h2>
 		<!-- 
 		<my:avatar data-model="Event.details" data-is-thumb="true"></my:avatar> -->
 
-		<h3>{{ Event.details.summary }}</h3>
+		<h3>{{ Event.model.when }}. {{ Event.details.summary }}</h3>
 		<p>{{ Event.details.description }}</p>
+		<p ng:if="!!Event.details.links && Event.details.links.length">
+			<span ng:repeat="link in Event.details.links">
+				- <a title="Go to: {{ link }}" href="{{ link }}">{{ link }}</a>
+			</span>
+		</p>
 
-		<iframe class="google-map" frameborder="0" style="border:0" ng:src="{{ getGoogleMapsSrc() }}">
-  </iframe>
+		<iframe class="google-map" frameborder="0" style="border:0" ng:src="{{ getGoogleMapsSrc() }}"></iframe>
 		
 	</article>
 
