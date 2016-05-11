@@ -81,11 +81,22 @@ hr {
 			margin-bottom: $gutterSize;
 		}
 
+		.google-map {
+			display: block;
+			width: 100%;
+			margin-bottom: $gutterSize;
+			height: 250px;
+		}
+
 		@media only screen and (min-width: $breakPoint) {
 			padding: $gutterSizeMid;
 
-			h2, h3, h4, p {
+			h2, h3, h4, p, .google-map {
 				margin-bottom: 25px;
+			}
+
+			.google-map {
+				height: 250px;
 			}
 		}
 

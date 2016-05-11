@@ -18,7 +18,10 @@
 		"title"   : "Lavenham Little Hall Museum",
 		"date"    : "20160527",
 		"summary" : "May 27 – 31",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"description" : "Links, info and directions (maybe google maps links) to follow",
+		"googleMaps" : {
+			"query" : "place_id:ChIJWRdfAqKs2UcRpNW5_T_FC0E"
+		}
 	},
 	{
 		"id"      : "norfolknorwichopenstudios",

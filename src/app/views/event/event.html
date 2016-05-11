@@ -21,6 +21,9 @@
 
 		<h3>{{ Event.details.summary }}</h3>
 		<p>{{ Event.details.description }}</p>
+
+		<iframe class="google-map" frameborder="0" style="border:0" ng:src="{{ getGoogleMapsSrc() }}">
+  </iframe>
 		
 	</article>
 
