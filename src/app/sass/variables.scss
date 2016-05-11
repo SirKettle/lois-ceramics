@@ -4,10 +4,11 @@ $gutterSize: 15px;
 $gutterSizeMid: 30px;
 $gutterSizeWide: 50px;
 
-$breakPointPortraitTablet: 750px;
-$breakPoint: 800px;
-$breakPointWide: 1199px;
+$breakPointMobileSmall: 500px;
 $breakPointSocialLinks: 650px;
+$breakPoint: 800px;
+$breakPointPortraitTablet: 750px;
+$breakPointWide: 1199px;
 
 
 // font family and weights - need to match the included google fonts in the link in index.html
@@ -41,12 +42,13 @@ $headerNavItemColor: #7f726f;
 
 // font sizes
 $baseFontSize: 16px;
-$headerFontSize: 2.75rem;
+$headerFontSize: 2.7rem;
 $headerNavFontSize: 1.25rem;
-$headerFontSizeMid: 4.5rem;
+$headerFontSizeMid: 4.25rem;
 $headerNavFontSizeMid: 1.5rem;
 $headerFontSizeWide: 6rem;
 $headerNavFontSizeWide: 1.5rem;
+$headerNavFontSizeSmall: 0.875rem;
 
 
 

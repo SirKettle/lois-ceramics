@@ -7,6 +7,7 @@ module.exports = angular.module('myApp.services.navigationService', [
 .service('NavigationService', function (
 	STATE_NAME_ABOUT,
 	STATE_NAME_EVENTS,
+	STATE_NAME_GALLERY,
 	STATE_NAME_ORDERS,
 	STATE_NAME_CONTACT
 ) {
@@ -20,6 +21,10 @@ module.exports = angular.module('myApp.services.navigationService', [
 				{
 					title: 'Events',
 					state: STATE_NAME_EVENTS
+				},
+				{
+					title: 'Gallery',
+					state: STATE_NAME_GALLERY
 				},
 				{
 					title: 'Orders',

@@ -1,0 +1,15 @@
+<div class="my-gallery">
+	<!-- Flickity HTML init -->
+	<div
+        class="gallery"
+        bc-flickity="{{ flickityOptions }}"
+        bc-flickity-id="demoId1"
+    >
+
+        <figure class="gallery-cell" data-ng-repeat="photo in model track by $index">
+            <img class="gallery-cell-image" data-flickity-lazyload="{{ photo.src }}" alt="{{ photo.alt }}" />
+        </figure>
+
+    </div>
+</div>
+

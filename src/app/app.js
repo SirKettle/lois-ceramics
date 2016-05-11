@@ -3,6 +3,8 @@
 
 var angular = require('angular');
 var uiRouter = require('angular-ui-router');
+var Flickity = require('flickity');
+var angularFlickity = require('angular-flickity');
 
 var filters = require('./filters');
 var localisationService = require('./services/localisationService');
@@ -12,6 +14,7 @@ var viewAbout = require('./views/about/about');
 var viewEvents = require('./views/events/events');
 var viewEvent = require('./views/event/event');
 var viewOrders = require('./views/orders/orders');
+var viewGallery = require('./views/gallery/gallery');
 var viewContact = require('./views/contact/contact');
 
 angular.module('myApp', [
@@ -22,20 +25,24 @@ angular.module('myApp', [
 	viewEvents.name,
 	viewEvent.name,
 	viewOrders.name,
+	viewGallery.name,
 	viewContact.name,
-	'ui.router'
+	'ui.router',
+	'bc.Flickity'
 ])
 .constant('STATE_URL_HOME_REDIRECT', '/')
 .constant('STATE_URL_ABOUT', '/about')
 .constant('STATE_URL_EVENTS', '/events')
 .constant('STATE_URL_EVENT', '/event/:eventKey')
 .constant('STATE_URL_ORDERS', '/orders')
+.constant('STATE_URL_GALLERY', '/gallery')
 .constant('STATE_URL_CONTACT', '/contact')
 .constant('STATE_NAME_HOME_REDIRECT', 'home')
 .constant('STATE_NAME_ABOUT', 'about')
 .constant('STATE_NAME_EVENTS', 'events')
 .constant('STATE_NAME_EVENT', 'event')
 .constant('STATE_NAME_ORDERS', 'orders')
+.constant('STATE_NAME_GALLERY', 'gallery')
 .constant('STATE_NAME_CONTACT', 'contact')
 .constant('DEFAULT_EVENT_KEY', null)
 .config(function (
@@ -47,12 +54,14 @@ angular.module('myApp', [
 	STATE_URL_EVENTS,
 	STATE_URL_EVENT,
 	STATE_URL_ORDERS,
+	STATE_URL_GALLERY,
 	STATE_URL_CONTACT,
 	STATE_NAME_HOME_REDIRECT,
 	STATE_NAME_ABOUT,
 	STATE_NAME_EVENTS,
 	STATE_NAME_EVENT,
 	STATE_NAME_ORDERS,
+	STATE_NAME_GALLERY,
 	STATE_NAME_CONTACT,
 	DEFAULT_EVENT_KEY
 ) {
@@ -85,6 +94,10 @@ angular.module('myApp', [
 		.state(STATE_NAME_ORDERS, {
 			url: STATE_URL_ORDERS,
 			template: '<my:view-orders></my:view-orders>'
+		})
+		.state(STATE_NAME_GALLERY, {
+			url: STATE_URL_GALLERY,
+			template: '<my:view-gallery></my:view-gallery>'
 		})
 		.state(STATE_NAME_CONTACT, {
 			url: STATE_URL_CONTACT,

@@ -22,9 +22,11 @@ module.exports = angular.module('myApp.views.orders', [
 		scope: {
 		},
 		link: function (scope, elem, attrs, controller) {
+
 		}
 	};
 })
 .controller('MyViewOrdersCtrl', function (
+	$scope
 ) {
 });

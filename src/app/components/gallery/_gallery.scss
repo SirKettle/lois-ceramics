@@ -1,0 +1,52 @@
+
+.my-gallery {
+
+	padding-bottom: 50px;
+	
+	.gallery {
+		height: 250px;
+
+		.gallery-cell {
+			height: 100%;
+			opacity: 0.75;
+			-webkit-transition: opacity 0.4s;
+			transition: opacity 0.4s;
+			// filter: blur(1px);
+
+			&.is-selected {
+				opacity: 1;
+
+			}
+
+			padding: 0 5px;
+		}
+
+		.gallery-cell-image {
+			display: block;
+			height: 100%;
+			opacity: 0;
+			-webkit-transition: opacity 0.4s;
+			transition: opacity 0.4s;
+			margin: 0;
+		}
+
+		/* fade in lazy loaded image */
+		.gallery-cell-image.flickity-lazyloaded,
+		.gallery-cell-image.flickity-lazyerror {
+	
+			opacity: 1;
+		}
+	}
+
+	@media only screen and (min-height: $breakPointPortraitTablet) {
+		.gallery {
+			height: 500px;
+		}
+	}
+
+	@media only screen and (min-width: $breakPoint) {
+		.gallery {
+			height: 500px;
+		}
+	}
+}

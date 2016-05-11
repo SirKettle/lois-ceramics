@@ -3,6 +3,10 @@
 @import "normalise.scss";
 @import "variables.scss";
 @import "mixins.scss";
+
+// vendor
+@import "./vendor/flickity.scss";
+
 @import "global.scss";
 
 // skins
@@ -12,6 +16,7 @@
 @import "../views/about/_about.scss";
 @import "../views/events/_events.scss";
 @import "../views/event/_event.scss";
+@import "../views/gallery/_gallery.scss";
 @import "../views/orders/_orders.scss";
 @import "../views/contact/_contact.scss";
 @import "../components/eventSummary/_eventSummary.scss";
@@ -21,3 +26,4 @@
 @import "../components/blog/_blog.scss";
 @import "../components/blogPost/_blogPost.scss";
 @import "../components/loadingImage/_loadingImage.scss";
+@import "../components/gallery/_gallery.scss";
