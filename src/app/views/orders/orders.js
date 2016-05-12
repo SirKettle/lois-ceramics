@@ -27,6 +27,12 @@ module.exports = angular.module('myApp.views.orders', [
 	};
 })
 .controller('MyViewOrdersCtrl', function (
-	$scope
+	$scope,
+	STATE_NAME_GALLERY,
+	STATE_NAME_CONTACT
 ) {
+	$scope.states = {
+		contact: STATE_NAME_CONTACT,
+		gallery: STATE_NAME_GALLERY
+	};
 });
