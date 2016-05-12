@@ -15,10 +15,10 @@
 				cursor: pointer;
 				display: block;
 				padding: 10px 0;
-				color: rgba($headerNavItemColor, 0.8);
+				color: rgba($headerNavItemColor, 0.6);
 
 				&:hover {
-					color: $headerNavItemColor;
+					color: $highlightColor;
 				}
 			}
 
