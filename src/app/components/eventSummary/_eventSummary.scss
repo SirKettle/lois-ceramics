@@ -3,6 +3,15 @@
 	@extend %clearfix;
 
 	> section {
+
+		&.past {
+			opacity: 0.5;
+		}
+
+		&.present {
+			font-size: 1.4em;
+		}
+
 		> div {
 			cursor: pointer;
 		}

@@ -14,17 +14,54 @@ module.exports = angular.module('myApp.services.eventService', [
 
 	var mURL = DataService.apiRoot() + 'events';
 
+	var getEvent = function ( event ) {
+
+		var dateNow, dateStartTime, dateEndTime;
+
+		event.isPast = false;
+		event.isPresent = false;
+		event.isTBC = true;
+
+		if (event.date && event.dateEnd) {
+			event.isTBC = false;
+			dateNow = new Date(new Date().toDateString()).getTime();
+			dateStartTime = new Date(new Date(event.date).toDateString()).getTime();
+			dateEndTime = new Date(new Date(event.dateEnd).toDateString()).getTime();
+
+			if (!isNaN(dateStartTime) && !isNaN(dateEndTime)) {
+				if ( dateStartTime <= dateNow ) {
+
+					if ( dateEndTime >= dateNow ) {
+						event.isPresent = true;
+					}
+					else {
+						event.isPast = true;
+					}
+				}
+			}
+		}
+
+		return event;
+	};
+
 	var _validateResponse = function (deferred, data, method) {
 		// validation
 		if (angular.isObject(data)) {
-			DataService.resolve(deferred, data);
+
+			if (angular.isArray(data)) {
+				data = data.map(getEvent);
+				DataService.resolve(deferred, data.map(getEvent));
+				return;
+			}
+
+			DataService.resolve(deferred, getEvent(data));
+			return;
 		}
-		else {
-			DataService.reject(deferred, {
-				message: 'invalid data',
-				data: data
-			});
-		}
+
+		DataService.reject(deferred, {
+			message: 'invalid data',
+			data: data
+		});
 	};
 
 	return {

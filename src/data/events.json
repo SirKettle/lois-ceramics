@@ -2,21 +2,24 @@
 	{
 		"id"      : "suttonhoo",
 		"title"   : "Sutton Hoo",
-		"date"    : "20160409",
+		"date"    : "2016-04-09",
+		"dateEnd" : "2016-04-10",
 		"when" : "April 9 & 10",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	},
 	{
 		"id"      : "glemhamhall",
 		"title"   : "Glemham Hall",
-		"date"    : "20160430",
+		"date"    : "2016-04-30",
+		"dateEnd" : "2016-05-02",
 		"when" : "April 30 - May 2",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	},
 	{
 		"id"      : "lavenham",
 		"title"   : "Lavenham Little Hall Museum",
-		"date"    : "20160527",
+		"date"    : "2016-05-27",
+		"dateEnd" : "2016-05-31",
 		"when"    : "May 27 – 31",
 		"summary" : "Contemporary Arts and Crafts in an historic 14th Century House and Gardens",
 		"description" : "A stunning variety of Ceramics, Jewellery, Paintings, Prints, Blacksmith, Textiles, Spinning and Weaving and other Arts and Crafts. Demonstrations throughout the exhibition. Free entry.",
@@ -29,7 +32,8 @@
 	{
 		"id"      : "norfolknorwichopenstudios",
 		"title"   : "Norfolk & Norwich Open Studios",
-		"date"    : "20160528",
+		"date"    : "2016-05-28",
+		"dateEnd" : "2016-06-12",
 		"when" : "May 28 – June 12",
 		"summary": "The county's artists open their doors to the public",
 		"description" : "For two weeks in May/June each year Norfolk & Norwich Open Studios celebrates the county's artists and their achievements, when they open their doors to the public to exhibit, sell and talk about their work. I am delighted to be a part of this event and hope to see you at my studio in Diss.",
@@ -41,71 +45,83 @@
 	},
 	{
 		"id"      : "wow",
-		"title"   : "WoW festival",
-		"date"    : "20160701",
+		"title"   : "WoW Music Festival",
+		"date"    : "2016-07-01",
+		"dateEnd" : "2016-07-03",
 		"when" : "July 1 – 3",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"summary": "WoW is acoustic, roots, ska, bluegrass and everything in between mixed up with a bit of swing",
+		"description" : "I'll have a stand there and probably have my wheel too. I would love to see you there, at Woolsey Bridge Fields, Diss. IP22 5SX",
+		"links" : [ "http://www.wow-arts.co.uk/" ],
+		"googleMaps" : {
+			"query" : "place_id:ChIJuZ2ymvnA2UcRkhbMu2A7OZo",
+			"zoom" : 12
+		}
 	},
 	{
 		"id"      : "southwoldstreetfair",
 		"title"   : "Southwold Street Fair",
-		"date"    : "20160625",
+		"date"    : "2016-06-25",
+		"dateEnd" : "2016-06-25",
 		"when" : "June 25",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	},
 	{
 		"id"      : "walberswickvillagehall",
 		"title"   : "Walberswick village hall",
-		"date"    : "20160729",
+		"date"    : "2016-07-29",
+		"dateEnd" : "2016-08-01",
 		"when" : "July 29 – Aug 1",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	},
 	{
 		"id"      : "folkeast",
 		"title"   : "Folk East",
-		"date"    : "20160819",
+		"date"    : "2016-08-19",
+		"dateEnd" : "2016-08-21",
 		"when" : "Aug 19 – 21",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	},
 	{
 		"id"      : "artonthepromfelixstowe",
 		"title"   : "Art on the Prom, Felixstowe",
-		"date"    : "20160904",
+		"date"    : "2016-09-04",
+		"dateEnd" : "2016-09-04",
 		"when" : "Sep 4",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	},
 	{
 		"id"      : "ickworthwoodfair",
 		"title"   : "Ickworth Wood Fair",
-		"date"    : "20161008",
+		"date"    : "2016-10-08",
+		"dateEnd" : "2016-10-09",
 		"when" : "Oct 8 – 9 TBC",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	},
 	{
 		"id"      : "blackthorpebarns",
 		"title"   : "British Crafts at Blackthorpe Barns",
-		"date"    : "20161112",
+		"date"    : "2016-11-12",
+		"dateEnd" : "2016-11-13",
 		"when" : "Nov 12 – 13",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	},
 	{
 		"id"      : "elycathedralxmasfair",
 		"title"   : "Ely Cathedral Xmas Fair",
-		"date"    : "20161117",
+		"date"    : "2016-11-17",
+		"dateEnd" : "2016-11-20",
 		"when" : "Nov 17 – 20",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	},
 	{
 		"id"      : "woodbridgestreetxmasfair",
 		"title"   : "Woodbridge Street Xmas Fair",
-		"date"    : "201612",
 		"when" : "Dec TBC",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	},
 	{
 		"id"      : "dissyardsxmasfair",
 		"title"   : "Diss Yards Xmas Fair",
-		"date"    : "201612",
 		"when" : "Dec TBC",
 		"description" : "Links, info and directions (maybe google maps links) to follow"
 	}
