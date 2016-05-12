@@ -22,7 +22,8 @@
 		"description" : "A stunning variety of Ceramics, Jewellery, Paintings, Prints, Blacksmith, Textiles, Spinning and Weaving and other Arts and Crafts. Demonstrations throughout the exhibition. Free entry.",
 		"links" : [ "http://www.littlehall.org.uk" ],
 		"googleMaps" : {
-			"query" : "place_id:ChIJWRdfAqKs2UcRpNW5_T_FC0E"
+			"query" : "place_id:ChIJWRdfAqKs2UcRpNW5_T_FC0E",
+			"zoom" : 16
 		}
 	},
 	{

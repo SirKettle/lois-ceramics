@@ -28,9 +28,12 @@ module.exports = angular.module('myApp.views.contact', [
 	};
 })
 .controller('MyViewContactCtrl', function (
-	ContactService
+	ContactService,
+	GOOGLE_MAPS_API_KEY
 ) {
 	var Contact = this;
+
+	// place_id:ChIJBxdTzurA2UcRYCL9h9oKx4M
 
 	ContactService.getContactDetails()
 		.then(function (details) {

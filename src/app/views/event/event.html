@@ -17,7 +17,7 @@
 		<!-- 
 		<my:avatar data-model="Event.details" data-is-thumb="true"></my:avatar> -->
 
-		<h3>{{ Event.model.when }}. {{ Event.details.summary }}</h3>
+		<h3>{{ Event.details.when }}. {{ Event.details.summary }}</h3>
 		<p>{{ Event.details.description }}</p>
 		<p ng:if="!!Event.details.links && Event.details.links.length">
 			<span ng:repeat="link in Event.details.links">
@@ -25,7 +25,10 @@
 			</span>
 		</p>
 
-		<iframe class="google-map" frameborder="0" style="border:0" ng:src="{{ getGoogleMapsSrc() }}"></iframe>
+		<iframe class="google-map" frameborder="0" style="border:0"
+			ng:if="!!Event.details.googleMaps"
+			ng:src="{{ getGoogleMapsSrc() }}"
+		></iframe>
 		
 	</article>
 

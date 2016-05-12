@@ -22,8 +22,7 @@ module.exports = angular.module('myApp.views.event', [
 	footerComponent.name
 ])
 .directive('myViewEvent', function (
-	MyEventService,
-	GOOGLE_MAPS_API_KEY
+	MyEventService
 ) {
 	return {
 		restrict: 'E',
@@ -41,18 +40,21 @@ module.exports = angular.module('myApp.views.event', [
 	$sce,
 	$scope,
 	$stateParams,
-	MyEventService
+	MyEventService,
+	GOOGLE_MAPS_API_KEY
 ) {
 	var Event = this;
 
-	$scope.getGoogleMapsSrc = () => {
+	$scope.getGoogleMapsSrc = function () {
 		if ( !Event.details || !Event.details.googleMaps ) {
 			return;
 		}
 		const { zoom, query } = Event.details.googleMaps;
-		const baseUrl = '//www.google.com/maps/embed/v1/place';
+		const baseUrl = 'https://www.google.com/maps/embed/v1/place';
 		const zoomQuery = zoom ? `&zoom=${ zoom }` : '';
-		return `${ baseUrl }?q=${ query }${ zoom }&key=${ GOOGLE_MAPS_API_KEY }`;
+		const url = `${ baseUrl }?q=${ query }${ zoomQuery }&key=${ GOOGLE_MAPS_API_KEY }`;
+		// debugger;
+		return $sce.getTrustedResourceUrl(url);
 	};
 
 	Event.getTestimonialQuoteHtml = function () {

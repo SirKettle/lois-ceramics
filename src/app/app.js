@@ -47,6 +47,7 @@ angular.module('myApp', [
 .constant('STATE_NAME_CONTACT', 'contact')
 .constant('DEFAULT_EVENT_KEY', null)
 .config(function (
+	$sceDelegateProvider,
 	$stateProvider,
 	$urlRouterProvider,
 	$provide,
@@ -66,6 +67,12 @@ angular.module('myApp', [
 	STATE_NAME_CONTACT,
 	DEFAULT_EVENT_KEY
 ) {
+	$sceDelegateProvider.resourceUrlWhitelist([
+		// Allow same origin resource loads.
+		'self',
+		// Allow loading from our assets domain.  Notice the difference between * and **.
+		'https://www.google.com/maps/**'
+	]);
 	// If 404 - go home...
 	$urlRouterProvider.otherwise(STATE_URL_HOME_REDIRECT);
 
