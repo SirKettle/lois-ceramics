@@ -4,13 +4,18 @@
 
 	<article>
 		<h2>Contact me</h2>
+		
 		<h3>If you would like to get in touch, please feel free to contact me:</h3>
-		<ul>
-			<li>Email - <a href="mailto:{{ Contact.details.email }}">{{ Contact.details.email }}</a></li>
-			<li>Telephone - {{ Contact.details.telephone }}</li>
-			<li>Mobile - {{ Contact.details.mobile }}</li>
-		</ul>
-		<p>I look forward to hearing from you... <br><em>{{ Contact.details.name }}</em></p>
+		<p>Email - <a href="mailto:{{ Contact.details.email }}">{{ Contact.details.email }}</a></p>
+		<p>Telephone - {{ Contact.details.telephone }}</p>
+		<p>Mobile - {{ Contact.details.mobile }}</p>
+
+		<h3>Visit me at my studio</h3>
+		<p>Please contact me to book an appointment!</p>
+
+		<iframe class="google-map" frameborder="0" style="border:0"
+			ng:src="{{ getGoogleMapsSrc() }}"
+		></iframe>
 	</article>
 	<my:footer></my:footer>
 </div>

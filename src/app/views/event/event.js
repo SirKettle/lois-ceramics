@@ -4,6 +4,7 @@ var angular = require('angular');
 var template = require('./event.html');
 // services
 var eventService = require('../../services/eventService');
+var googleMapsService = require('../../services/googleMapsService');
 // sub components
 var headerComponent = require('../../components/header/header');
 var footerComponent = require('../../components/footer/footer');
@@ -18,11 +19,11 @@ var footerComponent = require('../../components/footer/footer');
 
 module.exports = angular.module('myApp.views.event', [
 	eventService.name,
+	googleMapsService.name,
 	headerComponent.name,
 	footerComponent.name
 ])
 .directive('myViewEvent', function (
-	MyEventService
 ) {
 	return {
 		restrict: 'E',
@@ -41,20 +42,14 @@ module.exports = angular.module('myApp.views.event', [
 	$scope,
 	$stateParams,
 	MyEventService,
-	GOOGLE_MAPS_API_KEY
+	GoogleMapsService
 ) {
 	var Event = this;
 
 	$scope.getGoogleMapsSrc = function () {
-		if ( !Event.details || !Event.details.googleMaps ) {
-			return;
-		}
+		if ( !Event.details || !Event.details.googleMaps ) { return; }
 		const { zoom, query } = Event.details.googleMaps;
-		const baseUrl = 'https://www.google.com/maps/embed/v1/place';
-		const zoomQuery = zoom ? `&zoom=${ zoom }` : '';
-		const url = `${ baseUrl }?q=${ query }${ zoomQuery }&key=${ GOOGLE_MAPS_API_KEY }`;
-		// debugger;
-		return $sce.getTrustedResourceUrl(url);
+		return GoogleMapsService.getMapSrc( query, zoom );
 	};
 
 	Event.getTestimonialQuoteHtml = function () {
@@ -78,7 +73,8 @@ module.exports = angular.module('myApp.views.event', [
 	};
 
 	Event.getDetails = function (id) {
-		Event.message = null;
+		Event.error = null;
+		Event.details = null;
 		return MyEventService.get(id)
 			.then(function (details) {
 				Event.details = details;
@@ -90,6 +86,12 @@ module.exports = angular.module('myApp.views.event', [
 			});
 	};
 
+	// $scope.$watch('key', function () {
+	// 	Event.key = $scope.key;
+	// 	Event.getDetails(Event.key);
+	// });
+
 	Event.key = $stateParams.eventKey;
 	Event.getDetails(Event.key);
+
 });

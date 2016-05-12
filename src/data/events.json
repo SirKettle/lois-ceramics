@@ -31,7 +31,13 @@
 		"title"   : "Norfolk & Norwich Open Studios",
 		"date"    : "20160528",
 		"when" : "May 28 – June 12",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"summary": "The county's artists open their doors to the public",
+		"description" : "For two weeks in May/June each year Norfolk & Norwich Open Studios celebrates the county's artists and their achievements, when they open their doors to the public to exhibit, sell and talk about their work. I am delighted to be a part of this event and hope to see you at my studio in Diss.",
+		"links" : [ "http://www.nnopenstudios.org.uk" ],
+		"googleMaps" : {
+			"query" : "place_id:ChIJBxdTzurA2UcRYCL9h9oKx4M",
+			"zoom" : 16
+		}
 	},
 	{
 		"id"      : "wow",

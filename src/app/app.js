@@ -30,7 +30,6 @@ angular.module('myApp', [
 	'ui.router',
 	'bc.Flickity'
 ])
-.constant('GOOGLE_MAPS_API_KEY', 'AIzaSyAGYcXR6ZSkrKvR2szmyjvRkcLs1G9Plck')
 .constant('STATE_URL_HOME_REDIRECT', '/')
 .constant('STATE_URL_ABOUT', '/about')
 .constant('STATE_URL_EVENTS', '/events')
