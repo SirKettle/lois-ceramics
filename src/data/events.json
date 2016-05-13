@@ -5,7 +5,7 @@
 		"date"    : "2016-04-09",
 		"dateEnd" : "2016-04-10",
 		"when" : "April 9 & 10",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"description" : "Links, info and directions to follow"
 	},
 	{
 		"id"      : "glemhamhall",
@@ -13,7 +13,11 @@
 		"date"    : "2016-04-30",
 		"dateEnd" : "2016-05-02",
 		"when" : "April 30 - May 2",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"description" : "Glemham Hall, Suffolk",
+		"googleMaps" : {
+			"query" : "place_id:ChIJa8kwwIeF2UcRS2O0kQXSrn",
+			"zoom" : 11
+		}
 	},
 	{
 		"id"      : "lavenham",
@@ -58,12 +62,18 @@
 		}
 	},
 	{
-		"id"      : "southwoldstreetfair",
-		"title"   : "Southwold Street Fair",
+		"id"      : "southwoldstreetfestival",
+		"title"   : "Southwold Street Festival",
 		"date"    : "2016-06-25",
 		"dateEnd" : "2016-06-25",
 		"when" : "June 25",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"summary": "Street entertainment, music, dance, choirs, stalls and local food and drink",
+		"description" : "Southwold High Street. 12 noon – 6.00pm. Free Entry. The Festival opens with a free street party which will begin with a circus themed parade. Enjoy an afternoon of street entertainment, music, dance, choirs, stalls and local food and drink.",
+		"links" : [ "http://southwoldartsfestival.co.uk/whats-on/" ],
+		"googleMaps" : {
+			"query" : "place_id:ChIJvZV9EyIi2kcRkXu30bsh6iA",
+			"zoom" : 14
+		}
 	},
 	{
 		"id"      : "walberswickvillagehall",
@@ -71,7 +81,13 @@
 		"date"    : "2016-07-29",
 		"dateEnd" : "2016-08-01",
 		"when" : "July 29 – Aug 1",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"summary": "",
+		"description" : "",
+		"links" : [ "http://walberswick.onesuffolk.net/village-hall/" ],
+		"googleMaps" : {
+			"query" : "place_id:ChIJOXyjPJYh2kcRX8oXc3qhw7E",
+			"zoom" : 10
+		}
 	},
 	{
 		"id"      : "folkeast",
@@ -79,15 +95,27 @@
 		"date"    : "2016-08-19",
 		"dateEnd" : "2016-08-21",
 		"when" : "Aug 19 – 21",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"summary": "A fresh approach to a timeless tradition",
+		"description" : "'Suffused with good vibrations, quirky, charming, and possessed of a joie de vivre...'. I will be here at this beautiful festival along with other local potters. Have a go at throwing a pot! or simply come and browse our work. Glemham Hall Grounds, Suffolk",
+		"links" : [ "http://www.folkeast.co.uk" ],
+		"googleMaps" : {
+			"query" : "place_id:ChIJa8kwwIeF2UcRS2O0kQXSrn",
+			"zoom" : 11
+		}
 	},
 	{
 		"id"      : "artonthepromfelixstowe",
-		"title"   : "Art on the Prom, Felixstowe",
+		"title"   : "Art on the Prom",
 		"date"    : "2016-09-04",
 		"dateEnd" : "2016-09-04",
 		"when" : "Sep 4",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"summary": "Felixstowe's Yearly Festival of Artwork",
+		"description" : "Art on the Prom is a free community event organised by a small group of volunteers. It will take place on Felixstowe's sea front on Sunday September 4th 2016.",
+		"links" : [ "http://www.artontheprom.org" ],
+		"googleMaps" : {
+			"query" : "place_id:ChIJ6Zlx9dd52UcRiemW9nrqtoQ",
+			"zoom" : 15
+		}
 	},
 	{
 		"id"      : "ickworthwoodfair",
@@ -95,7 +123,7 @@
 		"date"    : "2016-10-08",
 		"dateEnd" : "2016-10-09",
 		"when" : "Oct 8 – 9 TBC",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"description" : "Links, info and directions to follow"
 	},
 	{
 		"id"      : "blackthorpebarns",
@@ -103,7 +131,7 @@
 		"date"    : "2016-11-12",
 		"dateEnd" : "2016-11-13",
 		"when" : "Nov 12 – 13",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"description" : "Links, info and directions to follow"
 	},
 	{
 		"id"      : "elycathedralxmasfair",
@@ -111,18 +139,18 @@
 		"date"    : "2016-11-17",
 		"dateEnd" : "2016-11-20",
 		"when" : "Nov 17 – 20",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"description" : "Links, info and directions to follow"
 	},
 	{
 		"id"      : "woodbridgestreetxmasfair",
 		"title"   : "Woodbridge Street Xmas Fair",
 		"when" : "Dec TBC",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"description" : "Links, info and directions to follow"
 	},
 	{
 		"id"      : "dissyardsxmasfair",
 		"title"   : "Diss Yards Xmas Fair",
 		"when" : "Dec TBC",
-		"description" : "Links, info and directions (maybe google maps links) to follow"
+		"description" : "Links, info and directions to follow"
 	}
 ]
