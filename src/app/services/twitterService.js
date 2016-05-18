@@ -97,8 +97,8 @@ module.exports = angular.module('myApp.services.twitterService', [
 						url: GET_TWEETS_URL, 
 						method: 'GET',
 						params: {
-							user: 'lois_thirkettle',
-							count: 8
+							user: 'thirkettle_lois',
+							count: 7
 						}
 					})
 					.success(function(aData, status, headers, config) {
