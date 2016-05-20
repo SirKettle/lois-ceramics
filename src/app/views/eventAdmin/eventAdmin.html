@@ -1,0 +1,37 @@
+<div class="view-event-admin page-view">
+	
+	<my:header></my:header>
+	
+	<article ng:if="!!Event.error">
+		<h2>{{ Event.error }}</h2>
+		<p><a href="/">Take me home</a>.</p>
+	</article>
+	
+	<article ng:if="!Event.details && !Event.error">
+		<h2>Loading...</h2>
+	</article>
+
+	<article ng:if="!!Event.details && !Event.message">
+		
+		<h2>{{ Event.details.title }}</h2>
+		<!-- 
+		<my:avatar data-model="Event.details" data-is-thumb="true"></my:avatar> -->
+
+		<h3>{{ Event.details.when }}. {{ Event.details.summary }}</h3>
+		<p>{{ Event.details.description }}</p>
+		<p ng:if="!!Event.details.links && Event.details.links.length">
+			<span ng:repeat="link in Event.details.links">
+				- <a title="Go to: {{ link }}" href="{{ link }}">{{ link }}</a>
+			</span>
+		</p>
+
+		<iframe class="google-map" frameborder="0" style="border:0"
+			ng:if="!!Event.details.googleMaps"
+			ng:src="{{ getGoogleMapsSrc() }}"
+		></iframe>
+		
+	</article>
+
+	<my:footer></my:footer>
+
+</div>

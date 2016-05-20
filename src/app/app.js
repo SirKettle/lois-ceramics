@@ -17,6 +17,7 @@ var viewOrders = require('./views/orders/orders');
 var viewGallery = require('./views/gallery/gallery');
 var viewContact = require('./views/contact/contact');
 var viewAdmin = require('./views/admin/admin');
+var viewEventAdmin = require('./views/eventAdmin/eventAdmin');
 
 angular.module('myApp', [
 	filters.name,
@@ -29,6 +30,7 @@ angular.module('myApp', [
 	viewGallery.name,
 	viewContact.name,
 	viewAdmin.name,
+	viewEventAdmin.name,
 	'ui.router',
 	'bc.Flickity'
 ])
@@ -40,6 +42,7 @@ angular.module('myApp', [
 .constant('STATE_URL_GALLERY', '/gallery')
 .constant('STATE_URL_CONTACT', '/contact')
 .constant('STATE_URL_ADMIN', '/admin')
+.constant('STATE_URL_EVENT_ADMIN', '/event_admin')
 .constant('STATE_NAME_HOME_REDIRECT', 'home')
 .constant('STATE_NAME_ABOUT', 'about')
 .constant('STATE_NAME_EVENTS', 'events')
@@ -48,6 +51,7 @@ angular.module('myApp', [
 .constant('STATE_NAME_GALLERY', 'gallery')
 .constant('STATE_NAME_CONTACT', 'contact')
 .constant('STATE_NAME_ADMIN', 'admin')
+.constant('STATE_NAME_EVENT_ADMIN', 'event_admin')
 .constant('DEFAULT_EVENT_KEY', null)
 .config(function (
 	$sceDelegateProvider,
@@ -62,6 +66,7 @@ angular.module('myApp', [
 	STATE_URL_GALLERY,
 	STATE_URL_CONTACT,
 	STATE_URL_ADMIN,
+	STATE_URL_EVENT_ADMIN,
 	STATE_NAME_HOME_REDIRECT,
 	STATE_NAME_ABOUT,
 	STATE_NAME_EVENTS,
@@ -70,6 +75,7 @@ angular.module('myApp', [
 	STATE_NAME_GALLERY,
 	STATE_NAME_CONTACT,
 	STATE_NAME_ADMIN,
+	STATE_NAME_EVENT_ADMIN,
 	DEFAULT_EVENT_KEY
 ) {
 	$sceDelegateProvider.resourceUrlWhitelist([
@@ -119,6 +125,13 @@ angular.module('myApp', [
 		.state(STATE_NAME_ADMIN, {
 			url: STATE_URL_ADMIN,
 			template: '<my:view-admin></my:view-admin>'
+		})
+		.state(STATE_NAME_EVENT_ADMIN, {
+			url: STATE_URL_EVENT_ADMIN,
+			template: '<my:view-event-admin></my:view-event-admin>',
+			params: {
+				eventKey: DEFAULT_EVENT_KEY
+			}
 		});
 
 	// decorate the $q service with 'allSettled' which unlike 'all' resolves if a promise fails

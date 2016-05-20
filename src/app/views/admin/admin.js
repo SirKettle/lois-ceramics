@@ -24,7 +24,9 @@ module.exports = angular.module('myApp.views.admin', [
 	eventSummaryComponent.name
 ])
 .directive('myViewAdmin', function (
-	MyEventService
+	$state,
+	MyEventService,
+	STATE_NAME_EVENT_ADMIN
 ) {
 	return {
 		restrict: 'E',
@@ -36,6 +38,16 @@ module.exports = angular.module('myApp.views.admin', [
 		link: function (scope, elem, attrs, controller) {
 
 			controller.getEvents();
+
+			scope._onCreateClicked = function () {
+				controller.createEvent(scope.newEvent);
+			};
+
+			scope._onRowClicked = function (event) {
+				$state.go(STATE_NAME_EVENT_ADMIN, {
+					eventKey: event.id
+				});
+			};
 		}
 	};
 })
@@ -54,4 +66,43 @@ module.exports = angular.module('myApp.views.admin', [
 				console.warn('getEvents error', params, err);
 			});
 	};
+
+
+
+	// var self = this;
+
+	// this.getMonsters = function (params) {
+	// 	return MyMonsterService.getAll(params)
+	// 		.then(function (monsters) {
+	// 			$scope.monsters = monsters;
+	// 		})
+	// 		.catch(function (err) {
+	// 			console.warn('getMonsters error', params, err);
+	// 		});
+	// };
+
+	// this.getMonster = function (id) {
+	// 	return MyMonsterService.get(id)
+	// 		.catch(function (err) {
+	// 			console.warn('getMonster error', id, err);
+	// 		});
+	// };
+
+	// this.updateMonster = function (id, params) {
+	// 	return MyMonsterService.update(id, params)
+	// 		.catch(function (err) {
+	// 			console.warn('updateMonster error', id, err);
+	// 		});
+	// };
+
+	// this.createMonster = function (params) {
+	// 	return MyMonsterService.create(params)
+	// 		.then(function (details) {
+	// 			self.getMonsters();
+	// 		})
+	// 		.catch(function (err) {
+	// 			console.warn('createMonster error', params, err);
+	// 		});
+	// };
+
 });

@@ -18,5 +18,70 @@
 				</tbody>
 			</table>
 		</section>
+
+		<form class="form-horizontal" role="form">
+			<h3>Create new event</h3>
+			<div class="form-group">
+				<label for="view-detail_title" class="col-sm-4 control-label">Title</label>
+				<div class="col-sm-6">
+					<input
+						ng:model="newEvent.title"
+						type="text"
+						class="form-control"
+						id="view-detail_title"
+						placeholder="Title">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="view-detail_when" class="col-sm-4 control-label">When</label>
+				<div class="col-sm-6">
+					<input
+						ng:model="newEvent.when"
+						type="text"
+						class="form-control"
+						id="view-detail_when"
+						placeholder="When">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="view-detail_summary" class="col-sm-4 control-label">Summary</label>
+				<div class="col-sm-6">
+					<input
+						ng:model="newEvent.summary"
+						type="text"
+						class="form-control"
+						id="view-detail_summary"
+						placeholder="Summary">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-6">
+					<button
+						type="submit"
+						class="btn btn-default"
+						ng:click="_onCreateClicked()"
+					>{{'myViewMain_buttonCreate' | localise}}</button>
+				</div>
+			</div>
+		</form>
+
+		<h3>Current Events</h3>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>When</th>
+					<th>Summary</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng:repeat="event in events"
+					ng:click="_onRowClicked(event)">
+					<td>{{ event.title }}</td>
+					<td>{{ event.when }}</td>
+					<td>{{ event.summary }}</td>
+				</tr>
+			</tbody>
+		</table>
 	</article>
 </div>

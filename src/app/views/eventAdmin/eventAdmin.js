@@ -17,27 +17,31 @@ var footerComponent = require('../../components/footer/footer');
 // template use:
 // <namespace:type-name></namespace:type-name> (examples: <wt:component-avatar></wt:component-avatar> or <dino:view-event></dino:view-event> )
 
-module.exports = angular.module('myApp.views.event', [
+module.exports = angular.module('myApp.views.eventAdmin', [
 	eventService.name,
 	googleMapsService.name,
 	headerComponent.name,
 	footerComponent.name
 ])
-.directive('myViewEvent', function (
+.directive('myViewEventAdmin', function (
 ) {
 	return {
 		restrict: 'E',
 		template: template,
-		controller: 'MyViewEventCtrl as Event',
+		controller: 'MyViewEventAdminCtrl as Event',
 		replace: true,
 		scope: {
 			key: '='
 		},
 		link: function (scope, elem, attrs, controller) {
+
+			scope._onUpdateClicked = function () {
+				controller.updateDetails(scope.key, scope.details);
+			};
 		}
 	};
 })
-.controller('MyViewEventCtrl', function (
+.controller('MyViewEventAdminCtrl', function (
 	$sce,
 	$scope,
 	$stateParams,
@@ -65,6 +69,29 @@ module.exports = angular.module('myApp.views.event', [
 				console.warn('getDetails error', id, err);
 			});
 	};
+
+	
+
+	// this.getDetails = function (id) {
+	// 	return MyMonsterService.get(id)
+	// 		.then(function (details) {
+	// 			$scope.details = details;
+	// 			// console.log('retrieved', $scope.details);
+	// 		})
+	// 		.catch(function (err) {
+	// 			console.warn('getDetails error', id, err);
+	// 		});
+	// };
+
+	// this.updateDetails = function (id, details) {
+	// 	return MyMonsterService.update(id, details)
+	// 		.then(function (details) {
+	// 			$scope.details = details;
+	// 			// console.log('updated', $scope.details);
+	// 		})
+	// 		.catch(function (err) {
+	// 			console.warn('updateDetails error', id, err);
+	// 		});
 
 	// $scope.$watch('key', function () {
 	// 	Event.key = $scope.key;
