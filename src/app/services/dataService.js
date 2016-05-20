@@ -9,13 +9,15 @@ module.exports = angular.module('myApp.services.dataService', [
 ])
 .service('DataService', function (
 	$q,
+	$http,
 	$rootScope,
 	DataHandler
 ) {
 
 	return {
 		apiRoot: function () {
-			return DataHandler.getApiRoot();
+			// return DataHandler.getApiRoot();
+			return 'http://localhost:80/api/event.php/'
 		},
 		resolve: function (deferred, data) {
 			deferred.resolve(data);
@@ -27,16 +29,20 @@ module.exports = angular.module('myApp.services.dataService', [
 			}, err));
 		},
 		create: function (url, params) {
-			return DataHandler.create(url, params);
+			// return DataHandler.create(url, params);
+			return $http.post(url, params);
 		},
 		get: function (url, params) {
-			return DataHandler.get(url, params);
+			// return DataHandler.get(url, params);
+			return $http.get(url);
 		},
 		update: function (url, params) {
-			return DataHandler.update(url, params);
+			// return DataHandler.update(url, params);
+			return $http.put(url, params);
 		},
 		delete: function (url) {
-			return DataHandler.delete(url);
+			// return DataHandler.delete(url);
+			return $http.delete(url);
 		}
 	};
 });

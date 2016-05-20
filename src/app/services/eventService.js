@@ -44,12 +44,14 @@ module.exports = angular.module('myApp.services.eventService', [
 		return event;
 	};
 
-	var _validateResponse = function (deferred, data, method) {
+	var _validateResponse = function (deferred, response, method) {
 		// validation
+
+		var data = response && response.data;
+
 		if (angular.isObject(data)) {
 
 			if (angular.isArray(data)) {
-				data = data.map(getEvent);
 				DataService.resolve(deferred, data.map(getEvent));
 				return;
 			}
