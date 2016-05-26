@@ -2,22 +2,26 @@
 
 var angular = require('angular');
 var $ = require('jquery');
-var dataHandler = require('../../services/mockDataHandler');
 
 module.exports = angular.module('myApp.services.dataService', [
-	dataHandler.name
 ])
+.constant('API_ROOT', 'http://server.willthirkettle.co.uk/api/json.php/')
+.constant('DEV_API_ROOT', 'http://localhost:80/api/json.php/')
 .service('DataService', function (
 	$q,
 	$http,
 	$rootScope,
-	DataHandler
+	DEV_API_ROOT,
+	API_ROOT
 ) {
+	const isDev = true;
 
 	return {
 		apiRoot: function () {
-			// return DataHandler.getApiRoot();
-			return 'http://localhost:80/api/event.php/'
+			if (isDev) {
+				return DEV_API_ROOT;
+			}
+			return API_ROOT;
 		},
 		resolve: function (deferred, data) {
 			deferred.resolve(data);
@@ -29,19 +33,15 @@ module.exports = angular.module('myApp.services.dataService', [
 			}, err));
 		},
 		create: function (url, params) {
-			// return DataHandler.create(url, params);
 			return $http.post(url, params);
 		},
 		get: function (url, params) {
-			// return DataHandler.get(url, params);
 			return $http.get(url);
 		},
 		update: function (url, params) {
-			// return DataHandler.update(url, params);
 			return $http.put(url, params);
 		},
 		delete: function (url) {
-			// return DataHandler.delete(url);
 			return $http.delete(url);
 		}
 	};

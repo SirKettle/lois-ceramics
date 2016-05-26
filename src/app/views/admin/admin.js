@@ -39,8 +39,16 @@ module.exports = angular.module('myApp.views.admin', [
 
 			controller.getEvents();
 
-			scope._onCreateClicked = function () {
-				controller.createEvent(scope.newEvent);
+			scope._onCreateClicked = function (event) {
+				controller.createEvent(event);
+			};
+
+			scope._onUpdateClicked = function (event) {
+				controller.updateEvent(event.id, event);
+			};
+
+			scope._onDeleteClicked = function (event) {
+				controller.deleteEvent(event.id);
 			};
 
 			scope._onRowClicked = function (event) {
@@ -67,42 +75,36 @@ module.exports = angular.module('myApp.views.admin', [
 			});
 	};
 
+	this.createEvent = function (eventData) {
+		return MyEventService.create(eventData)
+			.then(function () {
+				self.getEvents();
+			})
+			.catch(function (err) {
+				console.warn('createEvent error', eventData, err);
+			});
+	};
 
+	this.updateEvent = function (id, eventData) {
+		return MyEventService.update(id, eventData)
+			.then(function (eventData) {
+				console.log('updated', eventData);
+				self.getEvents();
+			})
+			.catch(function (err) {
+				console.warn('updateEvent error', eventData, err);
+			});
+	};
 
-	// var self = this;
-
-	// this.getMonsters = function (params) {
-	// 	return MyMonsterService.getAll(params)
-	// 		.then(function (monsters) {
-	// 			$scope.monsters = monsters;
-	// 		})
-	// 		.catch(function (err) {
-	// 			console.warn('getMonsters error', params, err);
-	// 		});
-	// };
-
-	// this.getMonster = function (id) {
-	// 	return MyMonsterService.get(id)
-	// 		.catch(function (err) {
-	// 			console.warn('getMonster error', id, err);
-	// 		});
-	// };
-
-	// this.updateMonster = function (id, params) {
-	// 	return MyMonsterService.update(id, params)
-	// 		.catch(function (err) {
-	// 			console.warn('updateMonster error', id, err);
-	// 		});
-	// };
-
-	// this.createMonster = function (params) {
-	// 	return MyMonsterService.create(params)
-	// 		.then(function (details) {
-	// 			self.getMonsters();
-	// 		})
-	// 		.catch(function (err) {
-	// 			console.warn('createMonster error', params, err);
-	// 		});
-	// };
+	this.deleteEvent = function (id) {
+		return MyEventService.delete(id)
+			.then(function () {
+				console.log('deleted', id);
+				self.getEvents();
+			})
+			.catch(function (err) {
+				console.warn('deleteEvent error', id, err);
+			});
+	};
 
 });

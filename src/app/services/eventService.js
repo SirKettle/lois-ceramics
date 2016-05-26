@@ -24,6 +24,10 @@ module.exports = angular.module('myApp.services.eventService', [
 
 		if (event.date && event.dateEnd) {
 			event.isTBC = false;
+
+			event.date = new Date( event.date );
+			event.dateEnd = new Date( event.dateEnd );
+
 			dateNow = new Date(new Date().toDateString()).getTime();
 			dateStartTime = new Date(new Date(event.date).toDateString()).getTime();
 			dateEndTime = new Date(new Date(event.dateEnd).toDateString()).getTime();
@@ -47,7 +51,7 @@ module.exports = angular.module('myApp.services.eventService', [
 	var _validateResponse = function (deferred, response, method) {
 		// validation
 
-		var data = response && response.data;
+		var data = response && response.data || response;
 
 		if (angular.isObject(data)) {
 

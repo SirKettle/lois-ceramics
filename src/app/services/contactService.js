@@ -20,7 +20,7 @@ module.exports = angular.module('myApp.services.contactService', [
 				{
 					id: 'twitter',
 					name: 'Twitter',
-					url: 'https://twitter.com/lois_thirkettle'
+					url: 'https://twitter.com/thirkettle_lois'
 				}
 			];
 			

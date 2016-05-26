@@ -4,7 +4,7 @@
 
 	<article>
 		<h2>Gallery</h2>
-		<my:gallery data-model="galleryData" />
+		<my:gallery ng:if="!!galleryData.length" data-model="galleryData" />
 	</article>
 	<my:footer></my:footer>
 </div>

@@ -34,7 +34,6 @@ module.exports = angular.module('myApp.views.events', [
 		scope: {
 		},
 		link: function (scope, elem, attrs, controller) {
-
 			controller.getEvents();
 		}
 	};
@@ -48,7 +47,18 @@ module.exports = angular.module('myApp.views.events', [
 	this.getEvents = function (params) {
 		return MyEventService.getAll(params)
 			.then(function (events) {
-				$scope.events = events;
+				$scope.events = events.sort(function (a, b) {
+					if (!a.date) {
+						return 1;
+					}
+					if (!b.date) {
+						return -1;
+					}
+					if (a.date.getTime() > b.date.getTime()) {
+						return 1;
+					}
+					return -1;
+				});
 			})
 			.catch(function (err) {
 				console.warn('getEvents error', params, err);

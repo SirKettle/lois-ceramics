@@ -6,20 +6,55 @@
 		<section>
 			<h2>Upcoming events</h2>
 			<table>
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>title</th>
+						<th>date</th>
+						<th>date end</th>
+						<th>when</th>
+						<th>summary</th>
+						<th>description</th>
+						<th>link</th>
+						<th>google maps query</th>
+						<th>map zoom</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
 				<tbody>
-					<tr ng:repeat="event in events"
-						class="event-list-item">
+					<tr ng:repeat="event in events">
 						<td>{{ event.id }}</td>
-						<td>{{ event.title }}</td>
-						<td>{{ event.date }}</td>
-						<td>{{ event.dateEnd }}</td>
-						<td>{{ event.googleMaps.query }}</td>
+						<td><input ng:model="event.title" type="text"></td>
+						<td><input ng:model="event.date" type="date"></td>
+						<td><input ng:model="event.dateEnd" type="date"></td>
+						<td><input ng:model="event.when" type="text"></td>
+						<td><input ng:model="event.summary" type="text"></td>
+						<td><input ng:model="event.description" type="text"></td>
+						<td><input ng:model="event.link" type="text"></td>
+						<td><input ng:model="event.googleMapsQuery" type="text"></td>
+						<td><input ng:model="event.googleMapsZoom" type="number"></td>
+						<td><button ng:click="_onUpdateClicked(event)">Update</button></td>
+						<td><button ng:click="_onDeleteClicked(event)">Delete</button></td>
+					</tr>
+					<tr class="new-item">
+						<td>New &rarr;&rarr;</td>
+						<td><input ng:model="newEvent.title" type="text"></td>
+						<td><input ng:model="newEvent.date" type="date"></td>
+						<td><input ng:model="newEvent.dateEnd" type="date"></td>
+						<td><input ng:model="newEvent.when" type="text"></td>
+						<td><input ng:model="newEvent.summary" type="text"></td>
+						<td><input ng:model="newEvent.description" type="text"></td>
+						<td><input ng:model="newEvent.link" type="text"></td>
+						<td><input ng:model="newEvent.googleMapsQuery" type="text"></td>
+						<td><input ng:model="newEvent.googleMapsZoom" type="number"></td>
+						<td colspan="2"><button ng:click="_onCreateClicked(newEvent)">Create</button></td>
 					</tr>
 				</tbody>
 			</table>
 		</section>
 
-		<form class="form-horizontal" role="form">
+		<form>
 			<h3>Create new event</h3>
 			<div class="form-group">
 				<label for="view-detail_title" class="col-sm-4 control-label">Title</label>
@@ -60,7 +95,7 @@
 						type="submit"
 						class="btn btn-default"
 						ng:click="_onCreateClicked()"
-					>{{'myViewMain_buttonCreate' | localise}}</button>
+					>Create</button>
 				</div>
 			</div>
 		</form>

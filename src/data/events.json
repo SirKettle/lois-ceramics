@@ -15,7 +15,7 @@
 		"when" : "April 30 - May 2",
 		"description" : "Glemham Hall, Suffolk",
 		"googleMaps" : {
-			"query" : "place_id:ChIJa8kwwIeF2UcRS2O0kQXSrn",
+			"query" : "place_id:ChIJa8kwwIeF2UcRS2O0kQXSrns",
 			"zoom" : 11
 		}
 	},
@@ -99,7 +99,7 @@
 		"description" : "'Suffused with good vibrations, quirky, charming, and possessed of a joie de vivre...'. I will be here at this beautiful festival along with other local potters. Have a go at throwing a pot! or simply come and browse our work. Glemham Hall Grounds, Suffolk",
 		"links" : [ "http://www.folkeast.co.uk" ],
 		"googleMaps" : {
-			"query" : "place_id:ChIJa8kwwIeF2UcRS2O0kQXSrn",
+			"query" : "place_id:ChIJa8kwwIeF2UcRS2O0kQXSrns",
 			"zoom" : 11
 		}
 	},

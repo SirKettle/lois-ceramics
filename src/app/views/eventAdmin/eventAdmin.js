@@ -1,7 +1,7 @@
 'use strict';
 
 var angular = require('angular');
-var template = require('./event.html');
+var template = require('./eventAdmin.html');
 // services
 var eventService = require('../../services/eventService');
 var googleMapsService = require('../../services/googleMapsService');

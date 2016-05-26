@@ -4,7 +4,8 @@ var angular = require('angular');
 
 module.exports = angular.module('myApp.services.twitterService', [
 ])
-.constant('GET_TWEETS_URL', 'http://server.willthirkettle.co.uk/api/getTweets.php')
+.constant('GET_TWEETS_URL', 'http://server.willthirkettle.co.uk/api/tweets.php')
+// .constant('GET_TWEETS_URL', 'http://server.willthirkettle.co.uk/api/getTweets.php')
 .service('TwitterService', function (
 	$q,
 	$http,

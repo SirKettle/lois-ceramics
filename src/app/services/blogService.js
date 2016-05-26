@@ -18,7 +18,8 @@ module.exports = angular.module('myApp.services.blogService', [
 		getPosts: function () {
 			var deferred = $q.defer();
 			var posts = [];
-			var tweetsPromise = TwitterService.getTweets().then(function (tweets) {
+			var useCache = true;
+			var tweetsPromise = TwitterService.getTweets(useCache).then(function (tweets) {
 				posts = posts.concat(tweets);
 			});
 

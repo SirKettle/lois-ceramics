@@ -1,4 +1,14 @@
 
 .view-event-admin {
 
+
+	button {
+		padding: 5px 15px;
+		color: white;
+		background: red;
+
+		&:hover, &:focus {
+			background: lighter(red);
+		}
+	}
 }

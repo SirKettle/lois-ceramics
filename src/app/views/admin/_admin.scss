@@ -3,6 +3,40 @@
 .view-admin {
 
 	> article {
+		max-width: 100%;
+		width: 100%;
+		overflow: auto;
+		table {
+			width: 100%;
+			max-width: 100%;
+
+			tr {
+				width: 100%;
+				max-width: 100%;
+			}
+
+			td, th {
+				line-height: 2;
+				border-bottom: solid 1px gray;
+				background: #ddd;
+				padding: 3px 5px;
+
+				input {
+					padding: 3px 5px;
+					background: #fff;
+				}
+			}
+		}
 	}
 
+
+	button {
+		padding: 5px 15px;
+		color: white;
+		background: red;
+
+		&:hover, &:focus {
+			background: lighter(red);
+		}
+	}
 }
