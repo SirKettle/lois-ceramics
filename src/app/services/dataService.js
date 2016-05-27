@@ -5,7 +5,7 @@ var $ = require('jquery');
 
 module.exports = angular.module('myApp.services.dataService', [
 ])
-.constant('API_ROOT', 'http://server.willthirkettle.co.uk/api/json.php/')
+.constant('API_ROOT', 'http://server.loisthirkettle.co.uk/api/json.php/')
 .constant('DEV_API_ROOT', 'http://localhost:80/api/json.php/')
 .service('DataService', function (
 	$q,
@@ -14,7 +14,7 @@ module.exports = angular.module('myApp.services.dataService', [
 	DEV_API_ROOT,
 	API_ROOT
 ) {
-	const isDev = true;
+	const isDev = false;
 
 	return {
 		apiRoot: function () {
