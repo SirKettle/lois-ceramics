@@ -5,7 +5,9 @@
 
 Using **AngularJS**, **SASS**, **Gulp** and **Browserify**
 
-Dev notes
+---
+
+### Dev notes
 
 Currently requires node v0.12
 
