@@ -40,9 +40,14 @@ module.exports = angular.module('myApp.views.events', [
 })
 .controller('MyViewEventsCtrl', function (
 	$scope,
-	MyEventService
+	MyEventService,
+	STATE_NAME_CONTACT
 ) {
 	var self = this;
+
+	$scope.states = {
+		contact: STATE_NAME_CONTACT
+	};
 
 	this.getEvents = function (params) {
 		return MyEventService.getAll(params)

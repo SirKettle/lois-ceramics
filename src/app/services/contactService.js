@@ -35,9 +35,9 @@ module.exports = angular.module('myApp.services.contactService', [
 				businessName: 'Lois Thirkettle Ceramics',
 				name: 'Lois',
 				email: 'loisthirkettleceramics@hotmail.com',
-				telephone: '01379 652910',
+				telephone: '01379 423635',
 				mobile: '07790 443 260',
-				address: '31 Roydon Road, Diss, Norfolk. IP22 4LN'
+				address: '33 Roydon Road, Diss, Norfolk. IP22 4LN'
 			};
 			
 			deferred.resolve(details);

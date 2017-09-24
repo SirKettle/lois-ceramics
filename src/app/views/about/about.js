@@ -29,9 +29,11 @@ module.exports = angular.module('myApp.views.about', [
 })
 .controller('MyViewAboutCtrl', function (
 	$scope,
-	STATE_NAME_EVENTS
+	STATE_NAME_EVENTS,
+	STATE_NAME_CONTACT
 ) {
 	$scope.states = {
-		events: STATE_NAME_EVENTS
+		events: STATE_NAME_EVENTS,
+		contact: STATE_NAME_CONTACT
 	};
 });

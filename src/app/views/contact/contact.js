@@ -37,7 +37,7 @@ module.exports = angular.module('myApp.views.contact', [
 	var Contact = this;
 
 	$scope.getGoogleMapsSrc = function () {
-		const roydonRoadPlaceQuery = 'place_id:ChIJBxdTzurA2UcRYCL9h9oKx4M';
+		const roydonRoadPlaceQuery = 'place_id:Eh8zMyBSb3lkb24gUmQsIERpc3MgSVAyMiA0TE4sIFVL';
 		const zoom = 15;
 		return GoogleMapsService.getMapSrc( roydonRoadPlaceQuery, zoom );
 	};
