@@ -49,4 +49,16 @@
 			height: 500px;
 		}
 	}
+
+	.gallery .flickity-page-dots {
+		display: none;
+	}
+
+	@media only screen and (min-width: $breakPointMobileSmall) {
+		.gallery .flickity-page-dots {
+			display: block;
+		}
+	}
+
+	
 }
